@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Header>
+
+<a class="btn btn-outline-primary mb-3" href="/admin/header/create">Create</a>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+                         
+                            <th>Photo</th>
+                            <th>Created Date</th>
+                             
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                <tfoot>
+                    <tr>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+
+                            <th>Photo</th>
+                            <th>Created Date</th>
+                        <th></th>
+
+                    </tr>
+                </tfoot>
+
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                                    <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.SubTitle</td>
+                                        
+                                                <td><img src = @item.PhotoURL width="100"/></td>
+                                                          <td>@item.CreatedDate.ToString("dddd, dd MMMM yyyy")</td>
+                                                
+                                    <td class="col-2">
+                                        <a href="/admin/header/edit/@item.ID" class="btn btn-outline-warning">Edit</a>
+                                         <a href="/admin/header/delete/@item.ID" class="btn btn-outline-danger">Delete</a>
+                                    </td>
+
+
+                                </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

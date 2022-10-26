@@ -1,0 +1,59 @@
+﻿@model NewAgency.Models.Team
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Team</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profession" class="control-label"></label>
+                <input asp-for="Profession" class="form-control" />
+                <span asp-validation-for="Profession" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhotoURL" class="control-label"></label>
+                    <input class="form-control" type = "file" name ="NewPhoto" placeholder = "PhotoUrl"/> 
+                <span asp-validation-for="PhotoURL" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="TwitterURL" class="control-label"></label>
+                <input asp-for="TwitterURL" class="form-control" />
+                <span asp-validation-for="TwitterURL" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="FacebookURL" class="control-label"></label>
+                <input asp-for="FacebookURL" class="form-control" />
+                <span asp-validation-for="FacebookURL" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="LinkedinURL" class="control-label"></label>
+                <input asp-for="LinkedinURL" class="form-control" />
+                <span asp-validation-for="LinkedinURL" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

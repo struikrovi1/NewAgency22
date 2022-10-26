@@ -1,0 +1,38 @@
+﻿
+
+<form method = "post" enctype="multipart/form-data" class="col-6 m-auto my-3">
+    <label>Product Name</label>
+    <input class="form-control" type = "text" name ="Name" placeholder = "Portfolio Name"/> 
+
+     <label>Product Description</label>
+    <input class="form-control" type = "text" name ="Description" placeholder = "Portfolio Description"/> 
+
+     <label>Product Price</label>
+    <input class="form-control" type = "text" name ="Client" placeholder = "Client name"/> 
+
+
+    
+
+      <label>Photo</label>
+    <input class="form-control" type = "file" name ="NewPhoto" placeholder = "PhotoUrl"/> 
+
+  
+    <br />
+  
+
+    <select name="CategoryID" class="form-control">
+
+        @foreach (var item in ViewData["Categories"] as IEnumerable<Category>)
+        {
+                    <option value = "@item.ID">
+                @item.CategoryName
+                    </option>
+        }
+
+    </select>
+
+
+
+
+    <input class = "btn btn-outline-success mt-5" type="submit" value ="Create"/>
+</form>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Portfolio>
+
+<a class="btn btn-outline-primary mb-3" href="/admin/portfolio/create">Create</a>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                          <th>Category Name</th>
+                            <th>Photo</th>
+                              <th>Client</th>
+                               <th>Deleted</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                          <th>Category Name</th>
+                            <th>Photo</th>
+                              <th>Client</th>
+                               <th>Deleted</th>
+                        <th></th>
+
+                    </tr>
+                </tfoot>
+
+
+
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+
+                                    <tr>
+                                    <td>@product.ID</td>
+                                    <td>@product.Name</td>
+                                        <td>@product.Category.CategoryName</td>
+                                                <td><img src = @product.PhotoURL width="100"/></td>
+                                                <td>@product.Client</td>
+                                                       <td>@product.IsDeleted</td>
+                                    <td class="col-2">
+                                        <a href="/admin/portfolio/edit/@product.ID" class="btn btn-outline-warning">Edit</a>
+                                         <a href="/admin/portfolio/delete/@product.ID" class="btn btn-outline-danger">Delete</a>
+                                    </td>
+
+
+                                </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<ContactUs>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+
+                            <th>Email</th>
+                            <th>Phone Number</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                <tfoot>
+                    <tr>
+                         <th>Id</th>
+                        <th>Name</th>
+
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                        <th></th>
+
+                    </tr>
+                </tfoot>
+
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                                        <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.Name</td>
+                                             <td>@item.Email</td>
+                                             <td>@item.PhoneNumber</td>
+
+                                                   
+
+                                        <td class="col-2">
+                                            <a href="/admin/contactUs/details/@item.ID" class="btn btn-outline-warning">DETAILS</a>
+                                            
+                                        </td>
+
+
+                                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
